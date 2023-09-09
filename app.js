@@ -16,6 +16,22 @@
         }
     }
 
+    function game() {
+        let roundPlayed = 0;
+        let playerWin =0;
+        let computerWin = 0;
+        let gameWinner = "";
+
+        while (roundPlayed < 5) {
+            roundPlayed++;
+            const computerselection = computerplay();
+            playerselection = prompt("player, please type in your selections (Rock, Paper or scissors)!")
+            console.log(playRound(capatilize(playerselection), computerselection));
+            //comole.log(roundsPlayed);
+            console.log("Player Win totals " + playerWin);
+            console.log("computer win totals " computerWin);
+            
+            
     function playRound(firstlettercap, computerselection) {
         let tie = "It's a Tie! you selected " + firstlettercap + " and the computer selected " + computerselection + ".";
         let paperBeatrock = "you Win! you selected " + firstlettercap + " and the computer selected " + computerselection + ".";
