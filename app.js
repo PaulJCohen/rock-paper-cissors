@@ -65,14 +65,21 @@
             return scissorsbeatPaper;
         }
     }
+}
 
-    f (playerWin > computerWin) {
+    if (playerWin > computerWin) {
   gameWinner = "Your a Top G!";
-  else if (playerWin ==== computerWin) } 
+} else if (playerWin === computerWin) {
   gameWinner ="TIE!";
-  els {
+     } else {
     gameWinner = "computer  Wins!";
   }
+
+
+    console.log("The Five game Winner is: " + gameWinner);
+}
+
+
     //function to format /capatilize the input
 function capatilize(playerselection) {  
     let allLowercase = playerselection.toLowerCase();
@@ -85,3 +92,5 @@ function capatilize(playerselection) {
     const computerselection = computerplay();
     console.log(playRound(capatilize(playerselection), computerselection));
     
+
+    game();
