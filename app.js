@@ -18,7 +18,7 @@
 
     function game() {
         let roundPlayed = 0;
-        let playerWin =0;
+        let playerWin = 0;
         let computerWin = 0;
         let gameWinner = "";
 
@@ -29,8 +29,9 @@
             console.log(playRound(capatilize(playerselection), computerselection));
             //comole.log(roundsPlayed);
             console.log("Player Win totals " + playerWin);
-            console.log("computer win totals " computerWin);
-            
+            console.log("computer win totals " + computerWin);
+        }
+    }
             
     function playRound(firstlettercap, computerselection) {
         let tie = "It's a Tie! you selected " + firstlettercap + " and the computer selected " + computerselection + ".";
@@ -45,16 +46,22 @@
         if (firstlettercap === computerselection) {
             return tie;
         } else if ((firstlettercap === "Paper" ) && (computerselection === "Rock")) {
+            playerWin++;
             return paperBeatrock;
         }else if  ((firstlettercap === "Paper") && (computerselection ===  "scissors")) {
+            computerWin++;
             return scissorsbeatPaperLoss;
         }else if ((firstlettercap === "rock")   && (computerselection === "Paper")) {
+            computerWin++;
             return paperBeatrockLoss;
         }else if ((firstlettercap === "rock") && (computerselection === "scissors")) {
+            playerWin++;
             return rockBeatScisors;        
         }else if ((firstlettercap === "scissors") && (computerselection === "rock")) {
+            computerWin++;
             return rockBeatScisorsloss;
         } else {
+            playerWin++;
             return scissorsbeatPaper;
         }
     }
