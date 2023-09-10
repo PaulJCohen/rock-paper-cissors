@@ -25,7 +25,7 @@
             const computerselection = computerplay();
            let playerselection = prompt("player, please type in your selections (Rock, Paper, or Scissors)!")
       
-            console.log(playRound(playerselection.toLowerCase(), computerselection.toLowerCase()));
+           playRound(playerselection.toLowerCase(), computerselection.toLowerCase());
             console.log("Player Win totals " + playerWin);
             console.log("computer win totals " + computerWin);
             }  
@@ -38,41 +38,24 @@
                 }
                 console.log("The Five game Winner is: " + gameWinner);
                   }                
-              function playRound(firstLettercap, computerselection) 
-        
+              function playRound(firstLettercap, computerselection) {
+            let tie = "It's a Tie! you selected " + firstLettercap + " and the computer selected " + computerselection + ".";
+            if (firstLettercap == computerselection) {
+           console.log(tie);
+            
+            }else if ((firstLettercap === "paper") && (computerselection === "rock") ||
+            (firstLettercap === "rock") && (computerselection === "scissors") ||
+            (firstLettercap === "scissors") && (computerselection === "paper")) {
+                playerWin++;
+                 console.log (`You win! you selected ${firstlettercap} and the computer selected ${computerselection}.`);
 
-        if (firstLettercap === computerselection) {
-            return tie;
-        } else if ((firstLettercap === "Paper" ) && (computerselection === "Rock")) {
-            playerWin++;
-            return paperBeatrock;
-        }else if  ((firstLettercap === "Paper") && (computerselection ===  "Scissors")) {
-            computerWin++;
-            return scissorsbeatPaperLoss;
-        }else if ((firstLettercap === "Rock")   && (computerselection === "Paper")) {
-            computerWin++;
-            return paperBeatrockLoss;
-        }else if ((firstLettercap === "Rock") && (computerselection === "Scissors")) {
-            playerWin++;
-            return rockBeatScissors;        
-        }else if ((firstLettercap === "Scissors") && (computerselection === "Rock")) {
-            computerWin++;
-            return rockBeatScisorsloss;
-        } else if ((firstLettercap === "Scissors") && (computerselection === "Paper")){
-            playerWin ++ ;
-            return scissorsbeatPaper;
-            console.log()
-            return scissorsbeatPaper;
-        } else  (console.log("Invalid value"));
-    
-    //function to format /capatilize the input
-function capatilize(playerselection) {  
-    let allLowercase = playerselection.toLowerCase();
-       //console.log(firstLetterCap);
-        return allLowercase; 
-    
-    }
+            } else if ((firstLettercap === "paper") && (computerselection === "scissors") ||
+            (firstLettercap === "scissors") && (computerselection === "rock") ||
+            (firstLettercap === "rock")  && (computerselection === "paper")) {
+                computerWin++ 
+                 console.log(`you lose ! you selected ${firstLettercap}and the computer selected${computerselection}.;`) 
+            }
 
-
+        }
 
     game();
