@@ -66,6 +66,13 @@
         }
     }
 
+    f (playerWin > computerWin) {
+  gameWinner = "Your a Top G!";
+  else if (playerWin ==== computerWin) } 
+  gameWinner ="TIE!";
+  els {
+    gameWinner = "computer  Wins!";
+  }
     //function to format /capatilize the input
 function capatilize(playerselection) {  
     let allLowercase = playerselection.toLowerCase();
