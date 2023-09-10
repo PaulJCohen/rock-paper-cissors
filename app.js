@@ -30,8 +30,8 @@
             //comole.log(roundsPlayed);
             console.log("Player Win totals " + playerWin);
             console.log("computer win totals " + computerWin);
-        }
-    }
+        
+    
             
     function playRound(firstlettercap, computerselection) {
         let tie = "It's a Tie! you selected " + firstlettercap + " and the computer selected " + computerselection + ".";
@@ -77,8 +77,8 @@
 
 
     console.log("The Five game Winner is: " + gameWinner);
-}
 
+}
 
     //function to format /capatilize the input
 function capatilize(playerselection) {  
@@ -88,9 +88,6 @@ function capatilize(playerselection) {
         return firstlettercap; 
     }
 
-    const playerselection = "rock";
-    const computerselection = computerplay();
-    console.log(playRound(capatilize(playerselection), computerselection));
-    
+   
 
     game();
