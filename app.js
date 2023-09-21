@@ -57,3 +57,16 @@ function game(){
         return scissorsBeatPaper;
     }
 }
+const container = document.querySelector("#container");
+const resultDiv = document.createElement("div");
+resultsDiv.style.marginTop = "20px";
+container.appendChild(resultDiv);
+
+const playerWinText =document.createElement("p");
+playerWinText.style.color = "blue";
+playerWinText.textContent = "player Win totals: "  + playerWin;
+resultDiv.appendChild(playerWinText);
+
+const computerwinText = Document.createElement("p");
+computerwinText.style.color = "blue";
+computerwinText.textContent = "computer Win totals:"
