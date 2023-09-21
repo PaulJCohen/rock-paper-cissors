@@ -27,13 +27,33 @@ function game(){
     })
 
     function playRound(playerSelection, computerSelection) {
-    let tie = "It's a Tie! You selected " + playerSelection + " and the computerselection";
-    let paperBeatRock = "You Win! you selected " + playerSelection + " and the computerselection";
-    let scissorsBeatPaperLoss = "You lose! You selected " +playerSelection + " and the computerselection";
-    let paperBeatRockLoss = "You lose! You selected " + playerSelection + "and the computerselection";
-    let rockBeatScissors = "You Win! You selected " + playerSelection + "and the computerselection";
-    let rockBeatScissorsLoss = "You lose! You selected " +playerSelection + "and the computerselection";
-    let scissorsBeatPaper = "You Win! You selected " + playerSelection + " and the computerselection";
+    let tie = "It's a Tie! You selected " + playerSelection + " and the computer selected " + computerSelection + "."; 
+    let paperBeatRock = "You Win! you selected " + playerSelection + " and the computer selected " + computerSelection + "."; 
+    let scissorsBeatPaperLoss = "You lose! You selected " +playerSelection + " and the computer selected " + computerSelection + "."; 
+    let paperBeatRockLoss = "You lose! You selected " + playerSelection + "and the computer selected " + computerSelection + "."; 
+    let rockBeatScissors = "You Win! You selected " + playerSelection + "and the computer selected " + computerSelection + "."; 
+    let rockBeatScissorsLoss = "You lose! You selected " +playerSelection + "and the computer selected " + computerSelection + "."; 
+    let scissorsBeatPaper = "You Win! You selected " + playerSelection + " and the computer selected " + computerSelection + "."; 
 
     if (playerSelection === computerSelection)}
         return tie;
+    }else if ((playerSelection === "paper") && (computerSelection === "Rock")){
+        playerWin++;
+        return paperBeatRock;
+    }else if ((playerSelection === "paper") && (computerSelection === "scissors")){
+        computerWin++
+        return scissorsBeatPaperLoss;
+    }else if ((playerSelection === "Rock") && (computerSelection === "Paper")){
+        computerWin++;
+        return paperBeatsRockLoss;
+    }else if ((playerSelection === "Rock") && (computerSelection === " scissors")){
+        playerWin++;
+        return rockBeatScissors;
+    }else if ((playerSelection == "scissors") && (computerSelection === "Rock")){
+        computerWin++;
+        return rockBeatScissorsLoss;
+    } else {
+        playerWin++;
+        return scissorsBeatPaper;
+    }
+}
