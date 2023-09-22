@@ -1,5 +1,8 @@
     //computer play that is randomly generated
     function computerPlay() {
+    }
+        
+        function game(){
         let rock = "Rock";
         let paper = "Paper";
         let scissors = "Scissors";
@@ -23,10 +26,10 @@
         const buttons = document.querySelectorAll('button');
         buttons.forEach((buttons) => {
             buttons.addEventListener('click',  () => {
-                playerSelection = button.className;
+                playerSelection = buttons.className;
                 const computerSelection = computerPlay();
                 battleWinText.textContent = (playRound(playerSelection,computerSelection));
-                playWinText.textContent = "Player Win totals: " +playerWin;
+                playWinText.textContent = "Player Win totals: " + playerWin;
                 computerWinText.textContent = "computer Win totals: " + computerWin;
                 endGame();
             })
@@ -44,7 +47,7 @@
  
 
             if (playerSelection === computerSelection){
-                return tie:
+                return tie;
             } else if ((playerSelection === "Paper") && (computerSelection === "Rock")) {
                computerWin++;
                return paperBeatRock; 
@@ -101,8 +104,40 @@
 
 
             // disabled game buttons
-            
+            document.getElementById("1").disabled = true;
+            document.getElementById("2").disabled = true;
+            document.getElementById("3").disabled = true;
+
+            // create new Dom button to replay
+            const playAgainButton = document.createElement("button");
+            playAgainButton.textContent = "Play Again!";
+            resultsDiv.appendChild(playAgainButton);
+
+            // if  clicked reload page 
+            playAgainButton.addEventListener('click', () => {
+                location.reload();
+            })
+        } else if  (computerWin == 5){
+            gameWinner = "COMPUTER WINS!";
+            gameWinText.textContent = gameWinner;
+
+            // disabled game buttons
+            document.getElementById("1").disabled = true;
+            document.getElementById("2").disabled = true;
+            document.getElementById("3").disabled = true;
+
+            //Dom button replay
+            const playAgainButton = document.createElement("button");
+            playAgainButton.textContent = "Play Again!";
+            resultsDiv.appendChild(playAgainButton);
+
+            // if clicked, reload page
+            playAgainButton.addEventListener('click',() =>{
+                location.reload();
+                 })
+        }
+            }
         }
      }
-
-        }
+ game();
+        
