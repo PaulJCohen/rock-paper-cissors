@@ -24,7 +24,22 @@
         buttons.forEach((buttons) => {
             buttons.addEventListener('click',  () => {
                 playerSelection = button.className;
-                
-            }
+                const computerSelection = computerPlay();
+                battleWinText.textContent = (playRound(playerSelection,computerSelection));
+                playWinText.textContent = "Player Win totals: " +playerWin;
+                computerWinText.textContent = "computer Win totals: " + computerWin;
+                endGame();
+            })
+        })
+
+        function playRound(playerSelection, computerSelection) {
+            let tie = "It's a Tie! You selected " + playerSelection + " and the computer selected " + computerSelection + ".";
+            let paperBeatRock = "You Win! You selected " + playerSelection + "and the computer selected " + computerSelection + ".";
+            let scissorsBeatPaperLoss = "You lose! You selected " + playerSelection + "and the computer selected " + computerSelection + ".";
+            let paperBeatRockLoss = "You lose! You seleted " + playerSelection + "and the computer selected " + computerSelection + ".";
+            let rockBeatScissors = "You Win! You selected " + playerSelection + "and the computer selected " + computerSelection + ".";
+            let rockBeatScissorsLoss = "You Win! You selected " + playerSelection + "and the computer selected " + computerSelection + ".";
+            let scissorsBeatPaper = "You WiN! You selected " + playerSelection + "and the computer selected " + computerSelection + ".";
+            
         }
-    }
+    
