@@ -72,6 +72,11 @@ computerwinText.style.color = "blue";
 computerwinText.textContent = "computer Win totals:" + computerWin;
 resultDiv.appendChild(computerwinText);
 
+const battleWinText = document.createElement("p");
+gameWinText.style.color = "black";
+gameWinText.textContent = gameWinner;
+resultDiv.appendChild(battleWinText);
+
 const gameWinText = document.createElement("p");
 gameWinText.style.color = "orange";
 gameWinText.textContent = gameWinner;
@@ -96,5 +101,19 @@ function endGame(){
 } else if (computerwin == 5) {
         gameWinner = "COMPUTER WINS!";
         gameWinText.textContent = gameWinner;
-        
-}
+
+        document.getElementById("1").disabled = true;
+        document.getElementById("2").disabled = true;
+        document.getElementById("3").disabled = true;
+    //disables the buttons 
+        const playAgainButton = document.createElement("button");
+        playAgainButton.textContent = "Play Again!";
+        resultDiv.appendChild(playAgainButton);
+
+        playAgainButton.addEventListener('click', () => {
+           location.reload(); 
+            })
+        }
+
+    }
+game();
