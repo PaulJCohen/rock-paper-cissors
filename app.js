@@ -24,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function checkWinner() {
-    if (playWin == 5) {
+    if (playerWin == 5) {
         return "Player, you won! Scum bag!";
     }else if ( computerWin === 5 ) {
         return "Computer wins! Better luck next time Dick face.";
@@ -37,6 +37,26 @@ document.addEventListener("DOMContentLoaded",() => {
     const resulDiv = document.querySelector("#container");
 
     buttons.forEach((button) => {
-        button.addEventListener('click', () => {}
-    }
-}
+        button.addEventListener('click', () => {
+            if (playWin < 5 && computerWin < 5) {
+                const playerSelection =button.className;
+                const computerSelection = computerplay ();
+                const result = playRound(playerSelection, computerSelection);
+                const resulText = document.createElement("p");
+                resultText.textContent = result.message;
+                resultText.style.color = result.color;
+                resulDiv.appendChild(winneText);
+
+                const winnerMessage = checkWinner();
+                if(winnerMessage){
+                    const winneText = document.createElement("p");
+                    winnerText.textContent = winnerMessage;
+                    winnerText.style.fontSize = "20px";
+                    winnerText.style.fontWeight = "bold";
+                    resulDiv.appendChild(winneText);
+                    buttons.forEach(button => button.disabled = true); //Disables the buttons
+                }
+            }
+        });
+    });
+});
